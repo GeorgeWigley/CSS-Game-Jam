@@ -22,6 +22,7 @@ public class LoadWebcamToTexture : MonoBehaviour
         // assuming the first available WebCam is desired
 
         WebCamTexture tex = new WebCamTexture(devices[0].name);
+        tex.requestedFPS = 30;
         //rend.material.mainTexture = tex;
         this._rawImage.texture = tex;
         tex.Play();
