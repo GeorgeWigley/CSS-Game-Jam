@@ -1,5 +1,5 @@
-# Blender MTL File: 'floppy-disk-green.blend'
-# Material Count: 2
+# Blender 3.1.2 MTL File: 'floppy-disk-green.blend'
+# www.blender.org
 
 newmtl Floppy
 Ns 250.000000
@@ -10,7 +10,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd textures\\floppy-green.jpg
+map_Kd  textures\floppy-green.jpg
 
 newmtl Floppy-Rear
 Ns 250.000000
@@ -21,4 +21,4 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd textures\\floppy-green-rear.jpg
+map_Kd  textures\floppy-green-rear.jpg

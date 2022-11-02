@@ -1,5 +1,5 @@
-# Blender MTL File: 'floppy-disk-red.blend'
-# Material Count: 2
+# Blender 3.1.2 MTL File: 'floppy-disk-red.blend'
+# www.blender.org
 
 newmtl Floppy
 Ns 250.000000
@@ -10,7 +10,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd textures\\ff2653f0-b02c-4e57-921c-5ffb6138de70.jpg
+map_Kd  textures\floppy-red.jpg
 
 newmtl Floppy-Rear
 Ns 250.000000
@@ -21,4 +21,4 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd textures\\52fa8b20-fa2a-4921-b720-0ebd97bb6558.jpg
+map_Kd  textures\floppy-red-rear.jpg
