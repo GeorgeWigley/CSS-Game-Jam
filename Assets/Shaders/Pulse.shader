@@ -82,8 +82,8 @@ Shader "Hidden/Pulse"
                 t *= t;
                 float depth = UNITY_SAMPLE_DEPTH(tex2D(_CameraDepthTexture, i.uv).r);
                 float linDepth = Linear01Depth(depth);
-                float d = saturate((t / 10 - linDepth - 0.02f) * 300);
-                float g = saturate(saturate((t / 10 - linDepth - 0.01f) * 300) - d);
+                float d = saturate((t / 20 - linDepth - 0.02f) * 1000);
+                float g = saturate(saturate((t / 20 - linDepth - 0.01f) * 1000) - d);
                 float2 gridUV = float2(i.uv.x, i.uv.y);
                 fixed grid = step(_GridWidth, ((gridUV.x * _GridSize) % 1)) * step(_GridWidth, ((gridUV.y * _GridSize) % 1));
 
