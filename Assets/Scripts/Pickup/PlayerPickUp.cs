@@ -57,7 +57,7 @@ public class PlayerPickUp : MonoBehaviour
 
     private Vector3 GetBoxCenter()
     {
-        return transform.position + transform.TransformDirection(offset);
+        return transform.position + cam.TransformDirection(offset);
     }
 
     private void OnDrawGizmos()
