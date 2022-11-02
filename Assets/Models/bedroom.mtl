@@ -1,5 +1,5 @@
 # Blender MTL File: 'bedroom.blend'
-# Material Count: 18
+# Material Count: 21
 
 newmtl Blue_Pill
 Ns 250.000000
@@ -22,16 +22,6 @@ d 1.000000
 illum 1
 map_Kd textures\\oAK.jpg
 
-newmtl Door
-Ns 250.000000
-Ka 1.000000 1.000000 1.000000
-Kd 0.276610 0.157910 0.078642
-Ks 0.500000 0.500000 0.500000
-Ke 0.000000 0.000000 0.000000
-Ni 1.450000
-d 1.000000
-illum 2
-
 newmtl Floor
 Ns 250.000000
 Ka 1.000000 1.000000 1.000000
@@ -42,6 +32,16 @@ Ni 1.450000
 d 1.000000
 illum 2
 map_Kd textures\\TexturesCom_Carpet0025_1_seamless_S.jpg
+
+newmtl Frame
+Ns 51.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.143076 0.143076 0.143076
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
 
 newmtl Knobs
 Ns 51.000005
@@ -123,6 +123,39 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
+
+newmtl Puzzle_Chamber_Ceiling
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textures\\metalwall2.png
+
+newmtl Puzzle_Chamber_Floor
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textures\\concrete_modular_floor2.png
+
+newmtl Puzzle_Chamber_Wall
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd textures\\concrete_modular_wall1.png
 
 newmtl Red_Pill
 Ns 250.000000
