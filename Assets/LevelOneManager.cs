@@ -1,27 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.PostProcessing;
+using Kino;
 public class LevelOneManager : MonoBehaviour
 {
-    public PostProcessVolume vfxStack;
+    public GravityCubeBehavouir cube;
+    public AnalogGlitch glitch;
+    public PostProcessVolume ppProfile;
     float timeElapsed;
-    float lerpDuration = 3;
-    float startValue = 0;
-    float endValue = 1;
-    float valueToLerp;
+    float lerpDuration = 5;
+
     void Update()
     {
-        if (timeElapsed < lerpDuration)
+        if (cube.counterMass < 0)
         {
-            valueToLerp = Mathf.Lerp(startValue, endValue, timeElapsed / lerpDuration);
-            timeElapsed += Time.deltaTime;
+            if (timeElapsed < lerpDuration)
+            {
+                ppProfile.weight = Mathf.Lerp(0, 1, timeElapsed / lerpDuration);
+                glitch.colorDrift = Mathf.Lerp(0, 0.25f, timeElapsed / lerpDuration);
+                glitch.scanLineJitter = Mathf.Lerp(0, 0.3f, timeElapsed / lerpDuration);
+                glitch.verticalJump = Mathf.Lerp(0, 0.1f, timeElapsed / lerpDuration);
+                glitch.horizontalShake = Mathf.Lerp(0, 0.1f, timeElapsed / lerpDuration);
+                timeElapsed += Time.deltaTime;
+
+            }
         }
-    }
-
-    public void CompleteLevel()
-    {
 
     }
+
 
 }
