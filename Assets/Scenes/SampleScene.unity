@@ -582,6 +582,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2107612642}
   - component: {fileID: 2107612641}
+  - component: {fileID: 2107612644}
+  - component: {fileID: 2107612643}
   m_Layer: 0
   m_Name: MatrixViewManager
   m_TagString: Untagged
@@ -603,6 +605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toggles:
   - {fileID: 1200902400}
+  - {fileID: 2107612643}
 --- !u!4 &2107612642
 Transform:
   m_ObjectHideFlags: 0
@@ -618,6 +621,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2107612643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107612640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9154cec1b6c840c9b880bd10a8de903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: {fileID: 2107612644}
+--- !u!114 &2107612644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107612640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: ceea183592d1148889a5dcfb205493f6, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 0
+  priority: 0
 --- !u!1001 &737335657262473485
 PrefabInstance:
   m_ObjectHideFlags: 0
