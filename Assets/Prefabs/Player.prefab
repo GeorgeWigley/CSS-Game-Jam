@@ -158,7 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   boxSize: {x: 1.24, y: 2.55, z: 1.32}
-  offset: {x: 0, y: -0.3, z: 0.96}
+  offset: {x: 0, y: 0, z: 1.5}
   pickUpMask:
     serializedVersion: 2
     m_Bits: 2147483647

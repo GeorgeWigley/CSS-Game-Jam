@@ -35,7 +35,7 @@ public class GravityCubeBehavouir : MatrixToggle
 
     public override void EnterMatrixView()
     {
-        massText.text = Convert.ToString(counterMass, 2) + " kg";
+        massText.text = Convert.ToString(counterMass, 2);
     }
 
     public override void ExitMatrixView()

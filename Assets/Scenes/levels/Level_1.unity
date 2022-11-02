@@ -271,10 +271,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 89205019}
-    - target: {fileID: 4323635225330636930, guid: 6aafbaab137c64e5688bd95a5dca1369, type: 3}
-      propertyPath: offset.z
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5442078663601736594, guid: 6aafbaab137c64e5688bd95a5dca1369, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -713,8 +709,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 27cbcc41a00b8f640aeb67c7041262e5, type: 2}
+  m_sharedMaterial: {fileID: -2286830080818999468, guid: 27cbcc41a00b8f640aeb67c7041262e5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
