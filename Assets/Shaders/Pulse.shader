@@ -8,7 +8,7 @@ Shader "Hidden/Pulse"
         _BinaryTexture ("Albedo (RGB)", 2D) = "white" {}
         _BinarySize ("Binary size", Float) = 10
         _Scroll ("Scroll", Vector) = (1,0,0,0)
-        _SplitOffset ("Split", Range(0,1)) = 0.2
+        _SplitOffset ("Split", Float) = 0.2
         _Offset("Offset", Float) = 0.3
         [HDR]_GridColor ("GridColor", Color) = (1,1,1,1)
         [HDR]_TextureColor ("TextureColor", Color) = (1,1,1,1)
@@ -50,6 +50,7 @@ Shader "Hidden/Pulse"
             }
 
             sampler2D _MainTex;
+            float4 _MainTex_TexelSize;
             sampler2D _CameraDepthTexture;
             sampler2D _BinaryTexture;
 
@@ -84,16 +85,16 @@ Shader "Hidden/Pulse"
                 float linDepth = Linear01Depth(depth);
                 float d = saturate((t / 10 - linDepth - 0.02f) * 300);
                 float g = saturate(saturate((t / 10 - linDepth - 0.01f) * 300) - d);
-                float2 gridUV = float2(i.uv.x, i.uv.y);
+                float2 gridUV = float2(i.uv.x * _MainTex_TexelSize.z, i.uv.y * _MainTex_TexelSize.w);
                 fixed grid = step(_GridWidth, ((gridUV.x * _GridSize) % 1)) * step(_GridWidth, ((gridUV.y * _GridSize) % 1));
 
-                half split = ceil((gridUV.x % 1) / _SplitOffset);
+                half split = ceil((gridUV.x % _SplitOffset));
                 half2 uv = gridUV * _BinarySize + _Scroll * _Time.y * sin(split) * _Offset;
                 fixed tex = step(0.5, tex2D(_BinaryTexture, uv).b);
 
                 half4 c = _GridColor * (1 - saturate(grid)) + tex * _TextureColor;
                 half4 col = tex2D(_MainTex, i.uv);
-                return lerp(col, col * float4(0.1f, 0.7f,0.1f,1), saturate(d + t * t)) + (c + _EdgeColor) * g * (1 - t);
+                return lerp(col, col * float4(0.1f, 0.7f,0.1f,1), saturate(d + t * t)) + (c + _EdgeColor) * g * (1 - t) + t * c * 0.05f;
             }
             ENDCG
         }
