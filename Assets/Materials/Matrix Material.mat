@@ -26,15 +26,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Glossiness: 0.5
-    - _GridSize: 0.6
-    - _GridWidth: 0.064
+    - _Glossiness: 0
+    - _GridSize: 0.1
+    - _GridWidth: 0.047
     - _Metallic: 0
     - _Offset: 0.92
-    - _SplitOffset: 0.2
+    - _SplitOffset: 0.383
     m_Colors:
     - _Color: {r: 0.0076984875, g: 0.009433985, b: 0.007831564, a: 1}
-    - _GridColor: {r: 0.21166328, g: 1.2631519, b: 0.3891873, a: 1}
+    - _GridColor: {r: 0, g: 1.1353015, b: 0.19615157, a: 1}
     - _Scroll: {r: 0, g: 1, b: 0, a: 0}
-    - _TextureColor: {r: 0.18632075, g: 0.5, b: 0.21794449, a: 1}
+    - _TextureColor: {r: 0, g: 0.25, b: 0.025490196, a: 1}
   m_BuildTextureStacks: []
