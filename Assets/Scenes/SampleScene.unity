@@ -768,6 +768,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7332552618186564856, guid: 6aafbaab137c64e5688bd95a5dca1369, type: 3}
+      propertyPath: rotationSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9193364204654275663, guid: 6aafbaab137c64e5688bd95a5dca1369, type: 3}
       propertyPath: m_Name
       value: Player Parent
