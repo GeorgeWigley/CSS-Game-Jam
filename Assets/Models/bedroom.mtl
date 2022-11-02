@@ -1,5 +1,5 @@
 # Blender MTL File: 'bedroom.blend'
-# Material Count: 20
+# Material Count: 21
 
 newmtl Blue_Pill
 Ns 250.000000
@@ -32,6 +32,16 @@ Ni 1.450000
 d 1.000000
 illum 2
 map_Kd textures\\TexturesCom_Carpet0025_1_seamless_S.jpg
+
+newmtl Frame
+Ns 51.000005
+Ka 1.000000 1.000000 1.000000
+Kd 0.143076 0.143076 0.143076
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
 
 newmtl Knobs
 Ns 51.000005
