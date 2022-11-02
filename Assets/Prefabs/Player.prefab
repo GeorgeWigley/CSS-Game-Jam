@@ -131,8 +131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  movementSpeed: 5000
-  strafeSpeed: 2500
+  movementSpeed: 3000
+  strafeSpeed: 1500
   linearDrag: 12
   footHeight: 0.95
   checkDistance: 0.1
@@ -143,6 +143,7 @@ MonoBehaviour:
     m_Bits: 51
   animator: {fileID: 0}
   moveVelocityThreshold: 10
+  rotationSpeed: 1
 --- !u!114 &6467967952870234661
 MonoBehaviour:
   m_ObjectHideFlags: 0

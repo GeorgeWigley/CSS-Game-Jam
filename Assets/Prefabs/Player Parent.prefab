@@ -53,14 +53,6 @@ PrefabInstance:
       value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1587340895, guid: b1e65b26ea3924bb2b8b51ae269ae45d, type: 3}
-      propertyPath: strafeSpeed
-      value: 6000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1587340895, guid: b1e65b26ea3924bb2b8b51ae269ae45d, type: 3}
-      propertyPath: movementSpeed
-      value: 7000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1587340895, guid: b1e65b26ea3924bb2b8b51ae269ae45d, type: 3}
       propertyPath: rotationSpeed
       value: 5.5
       objectReference: {fileID: 0}
