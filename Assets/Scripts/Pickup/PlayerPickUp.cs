@@ -2,18 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerPickUp : MonoBehaviour
+public class PlayerPickUp : MatrixToggle
 {
     [SerializeField] private Transform cam;
     [SerializeField] private Vector3 boxSize = Vector3.one;
     [SerializeField] private Vector3 offset;
     [SerializeField] private LayerMask pickUpMask;
 
-    private bool holding;
+    private IPickup holding;
+    private bool inMatrix;
 
     private void Update()
     {
-        if (!holding && Input.GetKeyDown(KeyCode.E))
+        if (!inMatrix && holding != null) {
+            holding.OnDrop();
+            holding = null;
+            return;
+        }
+        if (holding == null && Input.GetKeyDown(KeyCode.E))
         {
             Collider[] pickupColliders = Physics.OverlapBox(GetBoxCenter(), boxSize, transform.rotation, pickUpMask);
             IPickup closest = null;
@@ -42,17 +48,25 @@ public class PlayerPickUp : MonoBehaviour
 
     private IEnumerator Pickup(IPickup pickup, Transform pickupTransform)
     {
-        pickup.OnPickup();
-        holding = true;
-        yield return null;
-        while (!Input.GetKeyDown(KeyCode.E))
-        {
-            pickupTransform.position = GetBoxCenter();
+        Debug.Log("Pickup Start");
+        Debug.Log(inMatrix);
+        if (inMatrix) {
+            Debug.Log("Enter pickup");
+            pickup.OnPickup();
+            holding = pickup;
             yield return null;
+            while (!Input.GetKeyDown(KeyCode.E) && inMatrix && holding != null && pickupTransform != null)
+            {
+                pickupTransform.position = GetBoxCenter();
+                yield return null;
+            }
+            if (pickup != null) {
+                pickup.OnDrop();
+            }
+            Debug.Log("Dropped");
+            yield return null;
+            holding = null;
         }
-        pickup.OnDrop();
-        yield return null;
-        holding = false;
     }
 
     private Vector3 GetBoxCenter()
@@ -65,6 +79,17 @@ public class PlayerPickUp : MonoBehaviour
         Gizmos.color = new Color(0, 1, 0, 0.5f);
         Gizmos.DrawCube(GetBoxCenter(), boxSize);
     }
+
+    public override void EnterMatrixView()
+    {
+        inMatrix = true;
+    }
+
+    public override void ExitMatrixView()
+    {
+        inMatrix = false;
+    }
+
 }
 
 public interface IPickup

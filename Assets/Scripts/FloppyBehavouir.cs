@@ -13,12 +13,16 @@ public class FloppyBehavouir : MonoBehaviour, IPickup
 
     public void OnPickup()
     {
-        rb.isKinematic = true;
+        if (rb != null) {
+            rb.isKinematic = true;
+        }
     }
 
     public void OnDrop()
     {
-        rb.isKinematic = false;
+        if (rb != null) {
+            rb.isKinematic = false;
+        }
     }
 
     public void Disappear() {
