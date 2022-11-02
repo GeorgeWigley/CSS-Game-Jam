@@ -5,7 +5,6 @@ using UnityEngine;
 public class FloppyBehavouir : MonoBehaviour, IPickup
 {
     private Rigidbody rb;
-    public PhysicsPickup player;
 
     private void Start()
     {
