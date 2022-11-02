@@ -17,7 +17,7 @@ public class LevelOneManager : MonoBehaviour
 
     void Update()
     {
-        if (cube.counterMass < 0)
+        if (cube.liftUp)
         {
             if (!startedPlaying) {
                 startedPlaying = true;
