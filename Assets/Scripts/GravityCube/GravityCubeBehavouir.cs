@@ -7,17 +7,20 @@ using TMPro;
 public class GravityCubeBehavouir : MatrixToggle
 {
     public int counterMass;
+    private bool inMatrix;
+    public bool liftUp;
     public TMP_Text massText;
 
     void Start()
     {
-        massText.text = counterMass.ToString() + " kg";
+        updateLabel();
+        liftUp = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (counterMass < 0) {
+        if (liftUp) {
             gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * 800);
         }
     }
@@ -29,17 +32,50 @@ public class GravityCubeBehavouir : MatrixToggle
             if (counterMass > 127) {
                 counterMass = -128;
             }
+            updateLabel();
             collision.gameObject.GetComponent<FloppyBehavouir>().Disappear();
         }
     }
 
     public override void EnterMatrixView()
     {
-        massText.text = Convert.ToString(counterMass, 2) + " kg";
+        inMatrix = true;
+        updateLabel();
     }
 
     public override void ExitMatrixView()
     {
-        massText.text = counterMass.ToString() + " kg";
+        inMatrix = false;
+        if (counterMass < 0) {
+            liftUp = true;
+        }
+        updateLabel();
+    }
+
+    private string intToBin(int x) {
+        var res = "";
+        if (x < 0) {
+            res += "1";
+            x += 128;
+        } else {
+            res += "0";
+        }
+        foreach (int unit in new int[] {64, 32, 16, 8, 4, 2, 1}) {
+            if (x >= unit) {
+                res += "1";
+                x -= unit;
+            } else {
+                res += "0";
+            }
+        }
+        return res;
+    }
+
+    private void updateLabel() {
+        if (inMatrix) {
+            massText.text = intToBin(counterMass);
+        } else {
+            massText.text = counterMass.ToString() + " kg";
+        }
     }
 }
