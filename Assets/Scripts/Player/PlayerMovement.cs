@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private float moveVelocityThreshold = 10;
 
+    [SerializeField] private float rotationSpeed = 1.0f;
+    private Vector3 forward;
     private Rigidbody rb;
 
     private bool jumpPressed;
@@ -25,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        //forward = transform.forward;
     }
 
     private void Update()
@@ -41,9 +44,10 @@ public class PlayerMovement : MonoBehaviour
         forwardDirection.Normalize();
 
         Vector3 horizontalDirection = Vector3.Cross(Vector3.up, forwardDirection);
-        horizontalDirection *= Input.GetAxisRaw("Horizontal");
-
-        forwardDirection *= Input.GetAxisRaw("Vertical");
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        horizontalDirection *= horizontalInput;
+        float verticalInput = Input.GetAxisRaw("Vertical");
+        forwardDirection *= verticalInput;
 
         Vector3 jumpVelocity = Vector3.zero;
         if (jumpPressed)
@@ -62,9 +66,25 @@ public class PlayerMovement : MonoBehaviour
         Vector3 velo = rb.velocity;
         velo.y = 0;
         velo = Vector3.Lerp(velo, Vector3.zero, Time.deltaTime * linearDrag);
-
         animator.SetBool("moving", velo.sqrMagnitude > moveVelocityThreshold);
         velo.y = rb.velocity.y;
+        Vector3 forward = transform.forward;
+        float angle = Vector3.SignedAngle(forward, velo, Vector3.up);
+        
+        
+        transform.Rotate(Vector3.up * (rotationSpeed * Time.deltaTime * angle) );
+        // if (angle < 170)
+        // {
+        //     forward.y = 0;
+        //     forward = Vector3.Lerp(forward, velo, Time.deltaTime * rotationSpeed);
+        //     forward.y = transform.forward.y;
+        //     transform.forward = forward;
+        // }
+        // else
+        // {
+        //     transform.Rotate(Vector3.up * (horizontalInput * rotationSpeed * Time.deltaTime));
+        // }
+
         rb.velocity = velo;
     }
 
