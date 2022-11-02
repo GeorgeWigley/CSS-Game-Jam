@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhysicsPickup : MonoBehaviour, IPickup
+public class FloppyBehavouir : MonoBehaviour, IPickup
 {
-    [SerializeField] private Collider[] colliders;
     private Rigidbody rb;
+    public PhysicsPickup player;
 
     private void Start()
     {
@@ -20,5 +20,9 @@ public class PhysicsPickup : MonoBehaviour, IPickup
     public void OnDrop()
     {
         rb.isKinematic = false;
+    }
+
+    public void Disappear() {
+        Destroy(gameObject);
     }
 }
