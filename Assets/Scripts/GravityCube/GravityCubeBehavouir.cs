@@ -21,7 +21,8 @@ public class GravityCubeBehavouir : MatrixToggle
     void Update()
     {
         if (liftUp) {
-            gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * 1000);
+            var rb = gameObject.GetComponent<Rigidbody>();
+            rb.AddForce(Vector3.up * (10) * rb.mass);
         }
     }
 
