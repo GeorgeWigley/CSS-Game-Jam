@@ -88,13 +88,13 @@ Shader "Hidden/Pulse"
                 float2 gridUV = float2(i.uv.x * _MainTex_TexelSize.z, i.uv.y * _MainTex_TexelSize.w);
                 fixed grid = step(_GridWidth, ((gridUV.x * _GridSize) % 1)) * step(_GridWidth, ((gridUV.y * _GridSize) % 1));
 
-                half split = ceil((gridUV.x % _SplitOffset));
+                half split = ceil((gridUV.x / _SplitOffset));
                 half2 uv = gridUV * _BinarySize + _Scroll * _Time.y * sin(split) * _Offset;
                 fixed tex = step(0.5, tex2D(_BinaryTexture, uv).b);
 
                 half4 c = _GridColor * (1 - saturate(grid)) + tex * _TextureColor;
                 half4 col = tex2D(_MainTex, i.uv);
-                return lerp(col, col * float4(0.1f, 0.7f,0.1f,1), saturate(d + t * t)) + (c + _EdgeColor) * g * (1 - t) + t * c * 0.05f;
+                return lerp(col, col * float4(0.1f, 0.7f,0.1f,1), saturate(d + t * t)) + (c + _EdgeColor) * g * (1 - t) + t * c * 0.02f;
             }
             ENDCG
         }
