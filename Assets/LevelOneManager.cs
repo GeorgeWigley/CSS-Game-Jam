@@ -6,16 +6,23 @@ using UnityEngine.Rendering.PostProcessing;
 using Kino;
 public class LevelOneManager : MonoBehaviour
 {
+    public AudioSource sound;
     public GravityCubeBehavouir cube;
     public AnalogGlitch glitch;
     public PostProcessVolume ppProfile;
     float timeElapsed;
     float lerpDuration = 5;
 
+    bool startedPlaying = false;
+
     void Update()
     {
         if (cube.counterMass < 0)
         {
+            if (!startedPlaying) {
+                startedPlaying = true;
+                sound.Play();
+            }
             if (timeElapsed < lerpDuration)
             {
                 ppProfile.weight = Mathf.Lerp(0, 1, timeElapsed / lerpDuration);

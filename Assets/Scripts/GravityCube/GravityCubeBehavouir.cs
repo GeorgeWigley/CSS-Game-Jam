@@ -2,10 +2,17 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GravityCubeBehavouir : MatrixToggle
 {
     public int counterMass;
+    public TMP_Text massText;
+
+    void Start()
+    {
+        massText.text = counterMass.ToString() + " kg";
+    }
 
     // Update is called once per frame
     void Update()
@@ -28,11 +35,11 @@ public class GravityCubeBehavouir : MatrixToggle
 
     public override void EnterMatrixView()
     {
-        Debug.Log(Convert.ToString(counterMass, 2));
+        massText.text = Convert.ToString(counterMass, 2) + " kg";
     }
 
     public override void ExitMatrixView()
     {
-        Debug.Log("exiting the matrix");
+        massText.text = counterMass.ToString() + " kg";
     }
 }
