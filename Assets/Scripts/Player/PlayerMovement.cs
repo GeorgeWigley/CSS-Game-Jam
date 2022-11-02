@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpSpeed = 10;
     [SerializeField] private LayerMask jumpMask;
     [Space]
-    //[SerializeField] private Animator animator;
+    [SerializeField] private Animator animator;
     [SerializeField] private float moveVelocityThreshold = 10;
 
     [SerializeField] private float rotationSpeed = 1.0f;
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 jumpVelocity = Vector3.zero;
         if (jumpPressed)
         {
-            //animator.SetTrigger("jump");
+            animator.SetTrigger("jump");
             jumpPressed = false;
             if (rb.velocity.y <= maxVelocityJumpThreshold && isGrounded)
             {
@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 velo = rb.velocity;
         velo.y = 0;
         velo = Vector3.Lerp(velo, Vector3.zero, Time.deltaTime * linearDrag);
-        //animator.SetBool("moving", velo.sqrMagnitude > moveVelocityThreshold || horizontalInput != 0);
+        animator.SetBool("moving", velo.sqrMagnitude > moveVelocityThreshold || horizontalInput != 0);
         velo.y = rb.velocity.y;
         //Vector3 forward = transform.forward;
         //float angle = Vector3.SignedAngle(forward, velo, Vector3.up);
