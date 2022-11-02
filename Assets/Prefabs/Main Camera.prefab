@@ -100,8 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
   distance: 5
-  minAngle: -20
-  maxAngle: 80
+  minAngle: 0
+  maxAngle: 70
   sensitivity: 1000
   collisionMask:
     serializedVersion: 2

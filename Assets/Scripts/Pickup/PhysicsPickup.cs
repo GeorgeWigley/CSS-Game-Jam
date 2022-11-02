@@ -14,19 +14,11 @@ public class PhysicsPickup : MonoBehaviour, IPickup
 
     public void OnPickup()
     {
-        foreach (Collider col in colliders)
-        {
-            col.enabled = false;
-        }
         rb.isKinematic = true;
     }
 
     public void OnDrop()
     {
-        foreach (Collider col in colliders)
-        {
-            col.enabled = true;
-        }
         rb.isKinematic = false;
     }
 }

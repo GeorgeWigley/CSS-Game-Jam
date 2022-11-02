@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 velo = rb.velocity;
         velo.y = 0;
         velo = Vector3.Lerp(velo, Vector3.zero, Time.deltaTime * linearDrag);
-        animator.SetBool("moving", velo.sqrMagnitude > moveVelocityThreshold);
+        animator.SetBool("moving", velo.sqrMagnitude > moveVelocityThreshold || horizontalInput != 0);
         velo.y = rb.velocity.y;
         Vector3 forward = transform.forward;
         float angle = Vector3.SignedAngle(forward, velo, Vector3.up);
