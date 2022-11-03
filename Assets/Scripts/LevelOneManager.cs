@@ -13,6 +13,7 @@ public class LevelOneManager : MonoBehaviour
     public PostProcessVolume ppProfile;
     float timeElapsed;
     float lerpDuration = 5;
+    private bool doOnce = false;
 
     bool startedPlaying = false;
 
@@ -35,8 +36,11 @@ public class LevelOneManager : MonoBehaviour
 
             }
             else{
-                var manager = GameObject.Find("GameManager");
-                manager.GetComponent<GameManager>().LoadNextLevel();
+                if (!doOnce){
+                    var manager = GameObject.Find("GameManager");
+                    manager.GetComponent<GameManager>().LoadNextLevel();
+                    doOnce = true;
+                }
             }
         }
 

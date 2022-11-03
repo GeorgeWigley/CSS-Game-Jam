@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/levels/Level_3.unity
     guid: 5ec1f6ce681689a4a9e389c2fe0e8b1c
+  - enabled: 1
+    path: Assets/Scenes/levels/Glass_Level.unity
+    guid: 0fd63256b02cf5443a03d23341a004ca
+  - enabled: 1
+    path: Assets/Scenes/CutsceneOne.unity
+    guid: 47635e3c55f9f174198a22e18e85924f
+  - enabled: 1
+    path: Assets/Scenes/CutsceneTwo.unity
+    guid: 574b78a89239d6d439033609a475750c
   m_configObjects: {}

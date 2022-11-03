@@ -717,10 +717,12 @@ MonoBehaviour:
   currentLevel: 0
   levels:
   - MainMenu
+  - CutsceneOne
   - Level_1
   - Glass_Level
   - Level_3
   - Final_Level
+  - CutsceneTwo
 --- !u!4 &1376224720
 Transform:
   m_ObjectHideFlags: 0
