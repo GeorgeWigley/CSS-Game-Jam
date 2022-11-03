@@ -6,7 +6,7 @@ using UnityEngine.Rendering.PostProcessing;
 using Kino;
 public class LevelOneManager : MonoBehaviour
 {
-    public AudioSource sound;
+    public AudioSource outroSound;
     public GravityCubeBehavouir cube;
     public AnalogGlitch glitch;
     public PostProcessVolume ppProfile;
@@ -21,7 +21,7 @@ public class LevelOneManager : MonoBehaviour
         {
             if (!startedPlaying) {
                 startedPlaying = true;
-                sound.Play();
+                outroSound.Play();
             }
             if (timeElapsed < lerpDuration)
             {

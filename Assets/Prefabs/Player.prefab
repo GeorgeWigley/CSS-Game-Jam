@@ -143,7 +143,7 @@ MonoBehaviour:
     m_Bits: 51
   animator: {fileID: 0}
   moveVelocityThreshold: 10
-  rotationSpeed: 1
+  rotationSpeed: 3
 --- !u!114 &6467967952870234661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  boxSize: {x: 1.24, y: 2.55, z: 1.32}
+  pickupDistance: 3
   offset: {x: 0, y: -0.3, z: 0.96}
   pickUpMask:
     serializedVersion: 2

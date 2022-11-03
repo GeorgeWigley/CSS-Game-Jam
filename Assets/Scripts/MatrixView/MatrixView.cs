@@ -5,12 +5,13 @@ using UnityEngine;
 public class MatrixView : MonoBehaviour
 {
     [SerializeField] private MatrixToggle[] toggles;
-
+    [SerializeField] private bool manualActivationAllowed;
+    [SerializeField] private AudioSource effectSound;
     private bool inMatrixView;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && manualActivationAllowed)
         {
             if (inMatrixView)
             {
@@ -24,16 +25,18 @@ public class MatrixView : MonoBehaviour
         }
     }
 
-    private void EnterMatrixView()
+    public void EnterMatrixView()
     {
+        effectSound.Play();
         foreach (MatrixToggle toggle in toggles)
         {
             toggle.EnterMatrixView();
         }
     }
     
-    private void ExitMatrixView()
+    public void ExitMatrixView()
     {
+        effectSound.Play();
         foreach (MatrixToggle toggle in toggles)
         {
             toggle.ExitMatrixView();
