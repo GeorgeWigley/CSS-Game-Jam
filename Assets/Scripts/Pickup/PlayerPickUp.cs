@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerPickUp : MatrixToggle
 {
     [SerializeField] private Transform cam;
-    [SerializeField] private Vector3 boxSize = Vector3.one;
+    [SerializeField] private float pickupDistance = 3;
     [SerializeField] private Vector3 offset;
     [SerializeField] private LayerMask pickUpMask;
 
@@ -21,27 +21,13 @@ public class PlayerPickUp : MatrixToggle
         }
         if (holding == null && Input.GetKeyDown(KeyCode.E))
         {
-            Collider[] pickupColliders = Physics.OverlapBox(GetBoxCenter(), boxSize, transform.rotation, pickUpMask);
-            IPickup closest = null;
-            Transform closestTransform = null;
-            float closestDistance = float.MaxValue;
-            foreach (Collider col in pickupColliders)
+            if (Physics.SphereCast(transform.position, 0.5f, cam.forward, out RaycastHit hit, pickupDistance, pickUpMask))
             {
-                if (col.transform.TryGetComponent(out IPickup pickup))
+                print(hit.transform);
+                if (hit.transform.TryGetComponent(out IPickup pickup))
                 {
-                    float dst = (col.transform.position - transform.position).sqrMagnitude;
-                    if (dst < closestDistance)
-                    {
-                        closest = pickup;
-                        closestDistance = dst;
-                        closestTransform = col.transform;
-                    }
+                    StartCoroutine(Pickup(pickup, hit.transform));
                 }
-            }
-
-            if (closest != null)
-            {
-                StartCoroutine(Pickup(closest, closestTransform));
             }
         }
     }
@@ -72,12 +58,6 @@ public class PlayerPickUp : MatrixToggle
     private Vector3 GetBoxCenter()
     {
         return transform.position + cam.TransformDirection(offset);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = new Color(0, 1, 0, 0.5f);
-        Gizmos.DrawCube(GetBoxCenter(), boxSize);
     }
 
     public override void EnterMatrixView()
