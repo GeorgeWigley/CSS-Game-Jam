@@ -8,6 +8,8 @@ public class GlassBehaviour : MonoBehaviour
 
     public int timesSmashed;
 
+    public bool smashedThisReset;
+
     public bool updateTexture;
 
 // Start is called before the first frame update
@@ -15,6 +17,7 @@ void Start()
 {
     timesSmashed = 0;
     updateTexture = false;
+    smashedThisReset = false;
 }
 
 // Update is called once per frame
@@ -27,6 +30,13 @@ void Update()
 }
 
 public void smash() {
-    timesSmashed += 1;
+    if (!smashedThisReset) {
+        timesSmashed += 1;
+        updateTexture = true;
+        smashedThisReset = true;
+        if (timesSmashed == 5) {
+            // replace object
+        }
+    }
 }
 }
