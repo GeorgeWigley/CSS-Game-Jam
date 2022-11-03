@@ -52,10 +52,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 jumpVelocity = Vector3.zero;
         if (jumpPressed)
         {
-            animator.SetTrigger("jump");
             jumpPressed = false;
             if (rb.velocity.y <= maxVelocityJumpThreshold && isGrounded)
             {
+                animator.SetTrigger("jump");
                 jumpVelocity = Vector3.up * jumpSpeed;
             }
         }

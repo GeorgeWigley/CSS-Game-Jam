@@ -238,6 +238,10 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3887622432709179729, guid: b1e65b26ea3924bb2b8b51ae269ae45d, type: 3}
+      propertyPath: m_Radius
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4852192718143674730, guid: b1e65b26ea3924bb2b8b51ae269ae45d, type: 3}
       propertyPath: m_Name
       value: Player
