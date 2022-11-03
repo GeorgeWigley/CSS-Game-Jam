@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GlassBehaviour : MonoBehaviour
 {
-    public Texture[] textures;
+    public Material[] textures;
 
     public int timesSmashed;
 
@@ -25,7 +25,7 @@ public class GlassBehaviour : MonoBehaviour
     {
         if (updateTexture) {
             updateTexture = false;
-            GetComponent<Renderer>().material.mainTexture = textures[timesSmashed];
+            GetComponent<Renderer>().material = textures[timesSmashed - 1];
         }
     }
 
