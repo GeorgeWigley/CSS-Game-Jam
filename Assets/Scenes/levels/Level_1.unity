@@ -1669,6 +1669,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spot Light (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3608305135830052817, guid: 52380614f9a361b4688433c7a920167a, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3608305135830052818, guid: 52380614f9a361b4688433c7a920167a, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -2029,6 +2033,10 @@ PrefabInstance:
     - target: {fileID: 3608305135830052816, guid: 52380614f9a361b4688433c7a920167a, type: 3}
       propertyPath: m_Name
       value: Spot Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 3608305135830052817, guid: 52380614f9a361b4688433c7a920167a, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3608305135830052818, guid: 52380614f9a361b4688433c7a920167a, type: 3}
       propertyPath: m_RootOrder
