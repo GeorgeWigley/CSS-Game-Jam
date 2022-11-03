@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class KeyPad : MonoBehaviour
+public class KeyPad : MatrixToggle
 {
     // Start is called before the first frame update
 
@@ -20,7 +20,7 @@ public class KeyPad : MonoBehaviour
     [SerializeField] private Text text;
     void Start()
     {
-        transformLocal = transform;
+        transformLocal = Camera.main.transform;
         currentCode = 0;
         correct = false;
         updateText();
@@ -77,15 +77,16 @@ public class KeyPad : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            if (wallCollider.center.x == 0)
-            {
-                wallCollider.center += new Vector3(1.5f, 0, 0);
-            }
-            else
-            {
-                wallCollider.center += new Vector3(-1.5f, 0, 0);
-            }
-        }
+            wallCollider.enabled = !wallCollider.enabled;
+    }
+
+    public override void EnterMatrixView()
+    {
+        Debug.Log(wallCollider.center);
+    }
+
+    public override void ExitMatrixView()
+    {
+        wallCollider.center += new Vector3(1.5f, 0, 0);
     }
 }
