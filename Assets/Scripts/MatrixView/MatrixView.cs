@@ -30,7 +30,10 @@ public class MatrixView : MonoBehaviour
         effectSound.Play();
         foreach (MatrixToggle toggle in toggles)
         {
-            toggle.EnterMatrixView();
+            if (toggle != null)
+            {
+                toggle.EnterMatrixView();
+            }
         }
     }
     
@@ -39,7 +42,10 @@ public class MatrixView : MonoBehaviour
         effectSound.Play();
         foreach (MatrixToggle toggle in toggles)
         {
-            toggle.ExitMatrixView();
+            if (toggle != null)
+            {
+                toggle.ExitMatrixView();
+            }
         }
     }
 }
