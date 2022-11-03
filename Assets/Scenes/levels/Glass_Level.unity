@@ -1567,7 +1567,11 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 3a0d48c1c1354ff46870a300650f67a2, type: 3}
       propertyPath: m_Materials.Array.data[10]
       value: 
-      objectReference: {fileID: 2100000, guid: 6c0d4106adb29a74788e287a6ab70c15, type: 2}
+      objectReference: {fileID: 2100000, guid: b2f94d5a7671b49a1b31067a5b8f392c, type: 2}
+    - target: {fileID: -7635826562936255635, guid: 3a0d48c1c1354ff46870a300650f67a2, type: 3}
+      propertyPath: m_Materials.Array.data[12]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a96a2eea1ca64840b56ebc1d6b72acf, type: 2}
     - target: {fileID: 919132149155446097, guid: 3a0d48c1c1354ff46870a300650f67a2, type: 3}
       propertyPath: m_Name
       value: glass-level
