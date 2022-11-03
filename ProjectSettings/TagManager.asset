@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - FloppyDisk
+  - Smasher
+  - Disable
   layers:
   - Default
   - TransparentFX
