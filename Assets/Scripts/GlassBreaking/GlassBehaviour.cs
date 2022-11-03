@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GlassBehaviour : MonoBehaviour
 {
-    public Texture[] textures;
+    public Material[] textures;
 
     public int timesSmashed;
 
@@ -25,19 +25,22 @@ public class GlassBehaviour : MonoBehaviour
     {
         if (updateTexture) {
             updateTexture = false;
-            GetComponent<Renderer>().material.mainTexture = textures[timesSmashed];
+            GetComponent<Renderer>().material = textures[timesSmashed - 1];
         }
     }
 
     void OnCollisionEnter (Collision targetObj) {
+        Debug.Log("COLLISION");
         if (!smashedThisReset && targetObj.gameObject.tag == "Smasher")
         {
+            Debug.Log("Actual collision");
             timesSmashed += 1;
             updateTexture = true;
             smashedThisReset = true;
-            if (timesSmashed == 5) {
-                // replace object
+            if (timesSmashed == 4) {
+                gameObject.SetActive(false);
             }
         }
+        
     }
 }

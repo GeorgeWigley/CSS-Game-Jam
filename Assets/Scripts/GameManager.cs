@@ -12,11 +12,14 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
+        currentLevel = 0;
     }
 
-    public void LoadMainMenu()
+    void Update()
     {
-        LoadASceneAsync("MainMenu");
+        if ( currentLevel == 0 && Input.GetKeyDown(KeyCode.Return)){
+            LoadNextLevel();
+        }
     }
 
     public void LoadNextLevel() 

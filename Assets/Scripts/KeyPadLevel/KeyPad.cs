@@ -11,8 +11,8 @@ public class KeyPad : MatrixToggle
 
     [SerializeField] private LayerMask layerMask;
     private Transform transformLocal;
-    [SerializeField] private int answerCode;
-    private int currentCode;
+    [SerializeField] private ulong answerCode;
+    private ulong currentCode;
     private bool correct;
     
     [SerializeField] GameObject wall;
@@ -53,7 +53,7 @@ public class KeyPad : MatrixToggle
                 if (value >= 0)
                 {
                     currentCode *= 10;
-                    currentCode += value;
+                    currentCode += (ulong) value;
                     updateText();
                 }
                 else if (value == -1)

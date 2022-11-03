@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.PostProcessing;
 using Kino;
+
 public class LevelOneManager : MonoBehaviour
 {
     public AudioSource outroSound;
@@ -33,7 +34,12 @@ public class LevelOneManager : MonoBehaviour
                 timeElapsed += Time.deltaTime;
 
             }
+            else{
+                var manager = GameObject.Find("GameManager");
+                manager.GetComponent<GameManager>().LoadNextLevel();
+            }
         }
+
 
     }
 
