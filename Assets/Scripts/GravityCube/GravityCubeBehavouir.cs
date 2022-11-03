@@ -73,9 +73,9 @@ public class GravityCubeBehavouir : MatrixToggle
 
     private void updateLabel() {
         if (inMatrix) {
-            massText.text = intToBin(counterMass);
+            massText.text = "(bin)\n"+ intToBin(counterMass)+ "\nkg";
         } else {
-            massText.text = counterMass.ToString() + " kg";
+            massText.text = "(int)\n"+counterMass.ToString() + "\nkg";
         }
     }
 }

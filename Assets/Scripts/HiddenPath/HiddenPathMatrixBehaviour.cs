@@ -9,20 +9,14 @@ public class HiddenPathMatrixBehaviour : MatrixToggle
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.SetActive(false);
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-
+    
     public override void EnterMatrixView() {
-        gameObject.SetActive(true);
+        gameObject.GetComponent<MeshRenderer>().enabled = true;
     }
 
     public override void ExitMatrixView() {
-        gameObject.SetActive(false);
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
     }
 }

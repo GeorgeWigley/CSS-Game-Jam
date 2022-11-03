@@ -230,10 +230,6 @@ PrefabInstance:
       propertyPath: strafeSpeed
       value: 3000
       objectReference: {fileID: 0}
-    - target: {fileID: 1587340895, guid: b1e65b26ea3924bb2b8b51ae269ae45d, type: 3}
-      propertyPath: rotationSpeed
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1451966101626732083, guid: b1e65b26ea3924bb2b8b51ae269ae45d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
