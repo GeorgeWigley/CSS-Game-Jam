@@ -9,7 +9,6 @@ public class GlassBehaviour : MonoBehaviour
     public int timesSmashed;
 
     public bool smashedThisReset;
-    public GameObject smashedGlass;
 
     public bool updateTexture;
 
@@ -38,9 +37,7 @@ public class GlassBehaviour : MonoBehaviour
             timesSmashed += 1;
             updateTexture = true;
             smashedThisReset = true;
-            if (timesSmashed == 5) {
-                // replace object
-                smashedGlass.SetActive(true);
+            if (timesSmashed == 4) {
                 gameObject.SetActive(false);
             }
         }
