@@ -17,11 +17,11 @@ public class GravityCubeBehavouir : MatrixToggle
         liftUp = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+    // Changed to physics update for physics 
         if (liftUp) {
-            gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * 5 * gameObject.GetComponent<Rigidbody>().mass);
+            gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * 20 * gameObject.GetComponent<Rigidbody>().mass);
         }
     }
 
