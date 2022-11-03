@@ -634,6 +634,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 97732c590af090f4f988256397998c25, type: 2}
   timesSmashed: 0
   smashedThisReset: 0
+  smashedGlass: {fileID: 0}
   updateTexture: 0
 --- !u!43 &371183147
 Mesh:
@@ -1680,6 +1681,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 97732c590af090f4f988256397998c25, type: 2}
   timesSmashed: 0
   smashedThisReset: 0
+  smashedGlass: {fileID: 0}
   updateTexture: 0
 --- !u!64 &2009891733
 MeshCollider:
