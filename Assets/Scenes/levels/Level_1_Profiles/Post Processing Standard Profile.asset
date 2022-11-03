@@ -99,11 +99,11 @@ MonoBehaviour:
     overrideState: 0
     value: 1
   temperature:
-    overrideState: 1
-    value: -6
+    overrideState: 0
+    value: -1
   tint:
     overrideState: 1
-    value: 17
+    value: 16
   colorFilter:
     overrideState: 0
     value: {r: 1, g: 1, b: 1, a: 1}
@@ -118,7 +118,7 @@ MonoBehaviour:
     value: 0
   postExposure:
     overrideState: 1
-    value: -1.12
+    value: -0.91
   contrast:
     overrideState: 1
     value: -0
@@ -154,10 +154,10 @@ MonoBehaviour:
     value: {x: 0.85040694, y: 0.8690465, z: 1, w: -0.04557892}
   gamma:
     overrideState: 1
-    value: {x: 0.88141394, y: 0.949186, z: 1, w: -0.04557884}
+    value: {x: 0.9484036, y: 0.9962175, z: 1, w: 0.15496808}
   gain:
     overrideState: 1
-    value: {x: 1, y: 0.9846099, z: 0.9384391, w: 0.37374654}
+    value: {x: 1, y: 0.94233084, z: 0.8660943, w: 0.37374654}
   masterCurve:
     overrideState: 0
     value:
