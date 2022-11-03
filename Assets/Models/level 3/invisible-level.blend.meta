@@ -3,7 +3,17 @@ guid: 33529a2d920677a4099a124468072259
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Puzzle Chamber Floor
+    second: {fileID: 2100000, guid: 0a96a2eea1ca64840b56ebc1d6b72acf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Puzzle Chamber Wall
+    second: {fileID: 2100000, guid: b2f94d5a7671b49a1b31067a5b8f392c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
