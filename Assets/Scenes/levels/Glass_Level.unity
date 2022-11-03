@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414726, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -634,7 +634,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 97732c590af090f4f988256397998c25, type: 2}
   timesSmashed: 0
   smashedThisReset: 0
-  smashedGlass: {fileID: 0}
   updateTexture: 0
 --- !u!43 &371183147
 Mesh:
@@ -1511,7 +1510,7 @@ MonoBehaviour:
   weight: {fileID: 1644073053}
   platform: {fileID: 100043120}
   player: {fileID: 612866223}
-  startPosition: {x: -9.99, y: 13.53, z: 5.76}
+  startPosition: {x: -9.99, y: 13.8, z: 5.76}
   weightPosition: {x: -9.68, y: 17.98, z: -3.8834095}
   platformPosition: {x: -11.143, y: 17.877, z: -2.078}
 --- !u!1001 &1640844993
@@ -1681,7 +1680,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 97732c590af090f4f988256397998c25, type: 2}
   timesSmashed: 0
   smashedThisReset: 0
-  smashedGlass: {fileID: 0}
   updateTexture: 0
 --- !u!64 &2009891733
 MeshCollider:
