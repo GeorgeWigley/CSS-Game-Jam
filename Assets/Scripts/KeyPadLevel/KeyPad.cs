@@ -18,6 +18,7 @@ public class KeyPad : MatrixToggle
     [SerializeField] GameObject wall;
     private BoxCollider wallCollider;
     [SerializeField] private Text text;
+    [SerializeField] private GameObject obstruction;
     void Start()
     {
         transformLocal = Camera.main.transform;
@@ -66,6 +67,7 @@ public class KeyPad : MatrixToggle
                     {
                         correct = true;
                         text.text = "Correct!";
+                        obstruction.SetActive(false);
                     }
                     else
                     {
