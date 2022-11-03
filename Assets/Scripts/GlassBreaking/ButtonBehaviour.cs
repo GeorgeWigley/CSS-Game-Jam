@@ -19,7 +19,11 @@ public class ButtonBehaviour : MatrixToggle
 
     public void OnClick() {
         Debug.Log("BUTTON PRESSED");
-        
+        var obj = GameObject.FindWithTag("Disable");
+        Debug.Log(obj);
+        obj.GetComponent<MeshRenderer>().enabled = false;
+        obj.GetComponent<Collider>().enabled = false;
+
     }
 
     public override void EnterMatrixView()

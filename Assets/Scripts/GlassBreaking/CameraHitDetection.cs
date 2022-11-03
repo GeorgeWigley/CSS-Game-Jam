@@ -28,7 +28,7 @@ public class CameraHitDetection : MonoBehaviour
                 script.OnClick();
             }
             else  {
-                Debug.Log("BUTTON MISSED")
+                Debug.Log("BUTTON MISSED");
             }
         }
     }
