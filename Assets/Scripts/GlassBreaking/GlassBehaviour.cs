@@ -9,6 +9,7 @@ public class GlassBehaviour : MonoBehaviour
     public int timesSmashed;
 
     public bool smashedThisReset;
+    public GameObject smashedGlass;
 
     public bool updateTexture;
 
@@ -30,14 +31,19 @@ public class GlassBehaviour : MonoBehaviour
     }
 
     void OnCollisionEnter (Collision targetObj) {
+        Debug.Log("COLLISION");
         if (!smashedThisReset && targetObj.gameObject.tag == "Smasher")
         {
+            Debug.Log("Actual collision");
             timesSmashed += 1;
             updateTexture = true;
             smashedThisReset = true;
             if (timesSmashed == 5) {
                 // replace object
+                smashedGlass.SetActive(true);
+                gameObject.SetActive(false);
             }
         }
+        
     }
 }

@@ -26,7 +26,9 @@ public class PlayerRestart : MonoBehaviour
             weight.transform.position = weightPosition;
             var obj = GameObject.FindWithTag("Disable");
             obj.GetComponent<MeshRenderer>().enabled = true;
-            obj.GetComponent<Collider>().enabled = true;           
+            obj.GetComponent<Collider>().enabled = true;      
+            var glass = GameObject.FindWithTag("Glass").GetComponent<GlassBehaviour>();
+            glass.smashedThisReset = false;     
             //restart the level. 
             player.transform.position = startPosition;
             //destroy and instantiate weight, platform
