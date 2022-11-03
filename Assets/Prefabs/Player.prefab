@@ -134,9 +134,9 @@ MonoBehaviour:
   movementSpeed: 3000
   strafeSpeed: 1500
   linearDrag: 12
-  footHeight: 0.95
-  checkDistance: 0.1
-  maxVelocityJumpThreshold: 5
+  footHeight: 0.5
+  checkDistance: 1
+  maxVelocityJumpThreshold: 10
   jumpSpeed: 400
   jumpMask:
     serializedVersion: 2
